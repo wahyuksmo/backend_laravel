@@ -35,4 +35,7 @@ Route::prefix('auth')->group(function () {
 
 Route::prefix('todo')->middleware('checkApiToken')->group(function () {
     Route::get('/search', [TodoController::class, 'index']);
+    Route::post('/add', [TodoController::class, 'store']);
 });
+
+
